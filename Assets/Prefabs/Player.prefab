@@ -342,5 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f40116cb8be84f129004cff6824f2180, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anglePerSecond: 45
+  anglePerSecond: 15
   invert: 1
+  waitTime: 0.3

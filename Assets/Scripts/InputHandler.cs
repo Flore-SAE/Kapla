@@ -37,7 +37,10 @@ public class InputHandler : MonoBehaviour
 
     public void OnRotate(InputAction.CallbackContext ctx)
     {
-        GetComponent<Rotate2D>().SetRotationSpeed(ctx.ReadValue<float>());
+        if(ctx.started)
+            return;
+        var value = ctx.ReadValue<float>();
+        GetComponent<Rotate2D>().ActivateRotation(Mathf.RoundToInt(value));
     }
 
     public void OnSwitchSide(InputAction.CallbackContext ctx)

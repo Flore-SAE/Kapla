@@ -4,19 +4,31 @@ public class Rotate2D : MonoBehaviour
 {
     public float anglePerSecond;
     public bool invert;
-    
-    private float realSpeed;
+    public float waitTime;
 
-    public void SetRotationSpeed(float rotationPower)
+    private float realSpeed;
+    private float lastRotation;
+
+    public void ActivateRotation(int side)
     {
-        realSpeed =  anglePerSecond * rotationPower;
-        if (invert)
-            realSpeed *= -1;
+        if (side != 0)
+        {
+            realSpeed = (invert ? anglePerSecond * -1 : anglePerSecond) * side;
+            Rotate();
+        }
+        else
+            realSpeed = 0;
     }
 
     private void Update()
     {
-        if (realSpeed != 0)
-            transform.Rotate(Vector3.forward, realSpeed * Time.deltaTime);
+        if (Time.time <= lastRotation + waitTime) return;
+        Rotate();
+    }
+
+    private void Rotate()
+    {
+        transform.Rotate(Vector3.forward, realSpeed);
+        lastRotation = Time.time;
     }
 }
