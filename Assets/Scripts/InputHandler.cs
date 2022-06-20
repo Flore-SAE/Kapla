@@ -6,11 +6,21 @@ public class InputHandler : MonoBehaviour
     private Camera mainCamera;
     private Move2D move2D;
     private Vector3 mousePosition;
+    private Spawner spawner;
+    private GameModeManager gameModeManager;
+    private Rotate2D rotate2D;
+    private KaplaResizer kaplaResizer;
+    private KaplaRemover kaplaRemover;
 
     private void Awake()
     {
         mainCamera = Camera.main;
         move2D = GetComponent<Move2D>();
+        spawner = GetComponent<Spawner>();
+        gameModeManager = GetComponent<GameModeManager>();
+        rotate2D = GetComponent<Rotate2D>();
+        kaplaResizer = GetComponent<KaplaResizer>();
+        kaplaRemover = GetComponent<KaplaRemover>();
     }
 
     public void OnMove(InputAction.CallbackContext ctx)
@@ -24,34 +34,32 @@ public class InputHandler : MonoBehaviour
     public void OnPlace(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
-        {
-            GetComponent<Spawner>().Spawn(transform);
-        }
+            spawner.Spawn(transform);
     }
 
     public void OnSwitchMode(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
-            GetComponent<GameModeManager>().Switch();
+            gameModeManager.Switch();
     }
 
     public void OnRotate(InputAction.CallbackContext ctx)
     {
-        if(ctx.started)
+        if (ctx.started)
             return;
         var value = ctx.ReadValue<float>();
-        GetComponent<Rotate2D>().ActivateRotation(Mathf.RoundToInt(value));
+        rotate2D.ActivateRotation(Mathf.RoundToInt(value));
     }
 
     public void OnSwitchSide(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
-            GetComponent<KaplaResizer>().SwitchSides();
+            kaplaResizer.SwitchSides();
     }
 
     public void OnRemove(InputAction.CallbackContext ctx)
     {
         if (ctx.performed)
-            GetComponent<KaplaRemover>().Remove(mousePosition);
+            kaplaRemover.Remove(mousePosition);
     }
 }

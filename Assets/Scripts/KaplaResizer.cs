@@ -6,6 +6,9 @@ public class KaplaResizer : MonoBehaviour
 {
     public float3 scale;
 
+    private const int HeightPerDepth = 3;
+    private const int DepthPerWidth = 5;
+    private const int FullWidth = HeightPerDepth * DepthPerWidth;
     private float3 previousScale;
 
     private void OnValidate()
@@ -19,11 +22,11 @@ public class KaplaResizer : MonoBehaviour
         var delta = scale - previousScale;
 
         if (delta.x != 0)
-            scale.yz = new float2(scale.x / 15f, scale.x / 5f);
+            scale.yz = new float2(scale.x / FullWidth, scale.x / DepthPerWidth);
         if (delta.y != 0)
-            scale.xz = new float2(scale.y * 15f, scale.z * 3f);
+            scale.xz = new float2(scale.y * FullWidth, scale.z * HeightPerDepth);
         if (delta.z != 0)
-            scale.xy = new float2(scale.z * 5f, scale.z / 3f);
+            scale.xy = new float2(scale.z * DepthPerWidth, scale.z / HeightPerDepth);
         previousScale = scale;
         transform.localScale = scale;
     }
