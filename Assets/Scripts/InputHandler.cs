@@ -11,9 +11,13 @@ public class InputHandler : MonoBehaviour
     private Rotate2D rotate2D;
     private KaplaResizer kaplaResizer;
     private KaplaRemover kaplaRemover;
+    private Canon canon;
+    private Rotate2D canonRotate;
 
     private void Awake()
     {
+        canon = FindObjectOfType<Canon>();
+        canonRotate = canon.GetComponent<Rotate2D>();
         mainCamera = Camera.main;
         move2D = GetComponent<Move2D>();
         spawner = GetComponent<Spawner>();
@@ -63,17 +67,17 @@ public class InputHandler : MonoBehaviour
 
     public void OnShootCanon(InputAction.CallbackContext ctx)
     {
-        if(ctx.performed)
-            FindObjectOfType<Canon>().Shoot();
+        if (ctx.performed)
+            canon.Shoot();
     }
 
     public void OnRotateCanon(InputAction.CallbackContext ctx)
     {
-       FindObjectOfType<Canon>().GetComponent<Rotate2D>().ActivateRotation(ctx.ReadValue<float>());
+        canonRotate.ActivateRotation(ctx.ReadValue<float>());
     }
-    
+
     public void OnModifyCanonPower(InputAction.CallbackContext ctx)
     {
-       FindObjectOfType<Canon>().ModifyPower(ctx.ReadValue<float>());
+        canon.ModifyPower(ctx.ReadValue<float>());
     }
 }
