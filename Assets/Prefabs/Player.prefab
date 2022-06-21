@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 6378063578723667654}
   - component: {fileID: 1602317389184709150}
   - component: {fileID: 5508438632993081590}
-  - component: {fileID: 18041277595485094}
+  - component: {fileID: 4514293126015340824}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -245,6 +245,42 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: c23d0a6f-304e-430a-bc1a-2cfbabad3f1d
     m_ActionName: Player/Remove[/Mouse/rightButton]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1938302759144844369}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: OnRotateCanon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 7487b229-225e-4e33-92ec-22fc1a1294e0
+    m_ActionName: Player/RotateCanon[/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ea2778b-2f10-4236-8293-fd8829ff6a8f
+    m_ActionName: Player/AddCanonPower[/Keyboard/downArrow,/Keyboard/upArrow]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1938302759144844369}
+        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
+        m_MethodName: OnShootCanon
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d865a42e-e848-46ef-8fcf-8ac89ae16896
+    m_ActionName: Player/ShootCanon[/Keyboard/enter]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -330,7 +366,7 @@ MonoBehaviour:
     x: 1.5
     y: 0.1
     z: 0.3
---- !u!114 &18041277595485094
+--- !u!114 &4514293126015340824
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -339,9 +375,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1938302759144844370}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f40116cb8be84f129004cff6824f2180, type: 3}
+  m_Script: {fileID: 11500000, guid: 06266d09e9ee4876b661b2d80bbbf705, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anglePerSecond: 15
+  angleStep: 15
   invert: 1
   waitTime: 0.3

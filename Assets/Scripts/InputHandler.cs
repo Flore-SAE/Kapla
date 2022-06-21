@@ -47,8 +47,8 @@ public class InputHandler : MonoBehaviour
     {
         if (ctx.started)
             return;
-        var value = ctx.ReadValue<float>();
-        rotate2D.ActivateRotation(Mathf.RoundToInt(value));
+        var inputValue = ctx.ReadValue<float>();
+        rotate2D.ActivateRotation(inputValue);
     }
 
     public void OnSwitchSide(InputAction.CallbackContext ctx)
@@ -71,6 +71,8 @@ public class InputHandler : MonoBehaviour
 
     public void OnRotateCanon(InputAction.CallbackContext ctx)
     {
-        
+       if(ctx.started)
+           return;
+       FindObjectOfType<Canon>().GetComponent<Rotate2D>().ActivateRotation(ctx.ReadValue<float>());
     }
 }

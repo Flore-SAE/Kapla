@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Rotate2D : MonoBehaviour
+public abstract class Rotate2D : MonoBehaviour
 {
-    public float anglePerSecond;
+    [FormerlySerializedAs("anglePerSecond")]
+    public float angleStep;
+
     public bool invert;
-    public float waitTime;
 
-    private float realSpeed;
-    private float lastRotation;
+    protected float realSpeed;
 
-    public void ActivateRotation(int side)
+    public virtual void ActivateRotation(float side)
     {
         if (side != 0)
         {
-            realSpeed = (invert ? anglePerSecond * -1 : anglePerSecond) * side;
-            Rotate();
+            var speed = invert ? angleStep * -1 : angleStep;
+            realSpeed = speed * Mathf.Sign(side);
         }
         else
             realSpeed = 0;
@@ -22,13 +23,14 @@ public class Rotate2D : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time <= lastRotation + waitTime) return;
-        Rotate();
+        if (realSpeed != 0)
+            ComputeRotation();
     }
 
-    private void Rotate()
+    protected void Rotate(float speed)
     {
-        transform.Rotate(Vector3.forward, realSpeed);
-        lastRotation = Time.time;
+        transform.Rotate(Vector3.forward, speed);
     }
+
+    protected abstract void ComputeRotation();
 }
