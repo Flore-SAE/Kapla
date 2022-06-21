@@ -62,4 +62,15 @@ public class InputHandler : MonoBehaviour
         if (ctx.performed)
             kaplaRemover.Remove(mousePosition);
     }
+
+    public void OnShootCanon(InputAction.CallbackContext ctx)
+    {
+        if(ctx.performed)
+            FindObjectOfType<Canon>().Shoot();
+    }
+
+    public void OnRotateCanon(InputAction.CallbackContext ctx)
+    {
+        
+    }
 }

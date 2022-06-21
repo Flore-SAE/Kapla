@@ -6,7 +6,7 @@
             "id": "39e815e3-4a4a-4989-9ea0-42d5fad38997",
             "actions": [
                 {
-                    "name": "Move",
+                    "name": "MovePiece",
                     "type": "Value",
                     "id": "2a9970ad-4455-4657-9070-0acefef04d54",
                     "expectedControlType": "Vector2",
@@ -15,7 +15,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Place",
+                    "name": "PlacePiece",
                     "type": "Button",
                     "id": "6cf3b89a-7b07-47ba-9b17-9a575ee5a582",
                     "expectedControlType": "Button",
@@ -33,7 +33,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Rotate",
+                    "name": "RotatePiece",
                     "type": "Value",
                     "id": "eb4ef8bc-2e30-4beb-adfa-d3e15b955f4c",
                     "expectedControlType": "Axis",
@@ -42,7 +42,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "SwitchSide",
+                    "name": "SwitchPieceSide",
                     "type": "Button",
                     "id": "cb055a28-38c0-45e7-9a92-a5874e7e7bf8",
                     "expectedControlType": "Button",
@@ -51,9 +51,36 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Remove",
+                    "name": "RemovePiece",
                     "type": "Button",
                     "id": "c23d0a6f-304e-430a-bc1a-2cfbabad3f1d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotateCanon",
+                    "type": "Value",
+                    "id": "7487b229-225e-4e33-92ec-22fc1a1294e0",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "AddCanonPower",
+                    "type": "Value",
+                    "id": "4ea2778b-2f10-4236-8293-fd8829ff6a8f",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "ShootCanon",
+                    "type": "Button",
+                    "id": "d865a42e-e848-46ef-8fcf-8ac89ae16896",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -68,7 +95,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Move",
+                    "action": "MovePiece",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -79,7 +106,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Place",
+                    "action": "PlacePiece",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -101,7 +128,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Rotate",
+                    "action": "RotatePiece",
                     "isComposite": true,
                     "isPartOfComposite": false
                 },
@@ -112,7 +139,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Rotate",
+                    "action": "RotatePiece",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -123,7 +150,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Rotate",
+                    "action": "RotatePiece",
                     "isComposite": false,
                     "isPartOfComposite": true
                 },
@@ -134,7 +161,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "SwitchSide",
+                    "action": "SwitchPieceSide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -145,7 +172,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "SwitchSide",
+                    "action": "SwitchPieceSide",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -156,9 +183,86 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Remove",
+                    "action": "RemovePiece",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "56bc1d99-490c-4e4a-9201-fbdf478fe6bd",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ShootCanon",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Left/Right",
+                    "id": "ed22fdcd-1ffc-46e3-8c40-bac1d76ab5fa",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotateCanon",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "5e18f0b2-20cd-4090-b882-ade7e7e12d10",
+                    "path": "<Keyboard>/leftArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "RotateCanon",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "56077ea9-aa7d-42b3-ade5-1af2d64f85be",
+                    "path": "<Keyboard>/rightArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "RotateCanon",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Up/Down",
+                    "id": "5dcece08-e912-4618-b383-e13afffab7c2",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "AddCanonPower",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "ca1d2b24-ec00-47a1-98a5-79692deacf00",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "AddCanonPower",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "d562b481-90af-44c7-838a-32d0516bbb0b",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "AddCanonPower",
+                    "isComposite": false,
+                    "isPartOfComposite": true
                 }
             ]
         },

@@ -484,6 +484,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &961643628 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1938302759144844369, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+  m_PrefabInstance: {fileID: 1938302761154504758}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2d05b73cb848f5458ecb2fc827f5c0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &993521503
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,6 +526,70 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1496089200
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1496089203}
+  - component: {fileID: 1496089202}
+  - component: {fileID: 1496089201}
+  m_Layer: 0
+  m_Name: Canon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1496089201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496089200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3f575a7cf04df19a51e5a7bbd9249a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dotsNumber: 15
+  dotPrefab: {fileID: 4769264799882605648, guid: ab402e2bde2daee4598837fc699be81b, type: 3}
+  dotSpacing: 0.2
+  dotMinScale: 0.1
+  dotMaxScale: 0.3
+--- !u!114 &1496089202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496089200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07376ff7fad1434b91e4b69dc5107f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectile: {fileID: 6349855242130946915, guid: d7feb255e2f270849bb95100752194f7, type: 3}
+  power: 9
+--- !u!4 &1496089203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1496089200}
+  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalPosition: {x: 4.6, y: -0.98, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!1001 &1938302761154504758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,6 +648,62 @@ PrefabInstance:
     - target: {fileID: 1938302759144844380, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionId
+      value: 7487b229-225e-4e33-92ec-22fc1a1294e0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: 4ea2778b-2f10-4236-8293-fd8829ff6a8f
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: d865a42e-e848-46ef-8fcf-8ac89ae16896
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[14].m_ActionName
+      value: Player/RotateCanon[/Keyboard/leftArrow,/Keyboard/rightArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/AddCanonPower[/Keyboard/downArrow,/Keyboard/upArrow]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Player/ShootCanon[/Keyboard/enter]
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 961643628}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnShootCanon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: InputHandler, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1938302759144844382, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6378063578723667654, guid: 794d2b74aa1b6c84ebb7be369a8aaf3d, type: 3}
       propertyPath: kaplasParent
