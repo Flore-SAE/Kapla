@@ -7,7 +7,7 @@ public class Canon : MonoBehaviour
     public Rigidbody2D projectile;
     public Vector2 minMaxPower;
     public float startingPower;
-    [Range(0, 0.1f)] public float powerModifier;
+    [Range(0.1f, 2)] public float powerModifier;
 
     public Vector2 appliedForce => transform.up * currentPower;
 
@@ -30,7 +30,7 @@ public class Canon : MonoBehaviour
     {
         currentModifier = newPower;
     }
-    
+
     public void Shoot()
     {
         var randomAngle = Random.value * 360;
@@ -40,7 +40,7 @@ public class Canon : MonoBehaviour
 
     private void Update()
     {
-        var tempPower = currentPower + currentModifier * powerModifier;
+        var tempPower = currentPower + currentModifier * powerModifier * Time.deltaTime;
         currentPower = Mathf.Clamp(tempPower, minMaxPower.x, minMaxPower.y);
     }
 }
