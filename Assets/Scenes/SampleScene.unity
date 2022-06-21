@@ -546,9 +546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3f575a7cf04df19a51e5a7bbd9249a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dotsNumber: 15
+  dotsNumber: 5
   dotPrefab: {fileID: 4769264799882605648, guid: ab402e2bde2daee4598837fc699be81b, type: 3}
-  dotSpacing: 0.2
+  dotSpacing: 0.75
   dotMinScale: 0.1
   dotMaxScale: 0.3
 --- !u!114 &1496089202
@@ -564,7 +564,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 6349855242130946915, guid: d7feb255e2f270849bb95100752194f7, type: 3}
-  power: 9
+  minMaxPower: {x: 0.75, y: 1.5}
+  startingPower: 1
+  powerModifier: 0.01
 --- !u!4 &1496089203
 Transform:
   m_ObjectHideFlags: 0
@@ -592,7 +594,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81567c5fb36c4f97a25fdf15c5a39896, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  angleStep: 15
+  angleStep: 25
   invert: 1
 --- !u!1001 &1938302761154504758
 PrefabInstance:
